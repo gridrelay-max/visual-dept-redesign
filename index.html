@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visual Dept. — Studio-quality photography, without the studio.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Libre+Caslon+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #FAFAF8;
+    --dark: #1A1A1A;
+    --secondary: #666666;
+    --olive: #6B7C5E;
+    --olive-hover: #5A6B4E;
+    --card-bg: #F2F1ED;
+    --white: #FFFFFF;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+  h1, h2, h3.section-title { font-family: 'Libre Caslon Display', serif; font-weight: 400; }
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul li a { text-decoration: none; color: var(--secondary); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+  nav ul li a:hover { color: var(--dark); }
+  .btn { display: inline-block; background: var(--olive); color: var(--white); padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; border: none; cursor: pointer; }
+  .btn:hover { background: var(--olive-hover); }
+  .btn-outline { background: transparent; border: 2px solid var(--olive); color: var(--olive); }
+  .btn-outline:hover { background: var(--olive); color: var(--white); }
+  .btn-white { background: var(--white); color: var(--olive); }
+  .btn-white:hover { background: #f0f0ee; }
+
+  /* HERO */
+  .hero { padding: 6rem 5% 5rem; max-width: 1200px; margin: 0 auto; }
+  .hero .eyebrow { color: var(--olive); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1.5rem; }
+  .hero h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.15; margin-bottom: 1.5rem; max-width: 700px; }
+  .hero p { font-size: 1.15rem; color: var(--secondary); max-width: 600px; margin-bottom: 2.5rem; line-height: 1.7; }
+  .hero-ctas { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .hero-ctas .secondary-link { color: var(--secondary); text-decoration: none; font-size: 0.95rem; }
+  .hero-ctas .secondary-link:hover { color: var(--dark); }
+  .trust-strip { display: flex; gap: 2rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.08); flex-wrap: wrap; }
+  .trust-strip span { color: var(--secondary); font-size: 0.9rem; }
+  .trust-strip span strong { color: var(--olive); }
+
+  /* SOCIAL PROOF */
+  .social-proof { background: var(--card-bg); padding: 2rem 5%; text-align: center; }
+  .social-proof p { color: var(--secondary); font-size: 0.95rem; letter-spacing: 0.5px; }
+
+  /* PROCESS */
+  .process { padding: 6rem 5%; max-width: 1200px; margin: 0 auto; }
+  .process .section-header { text-align: center; margin-bottom: 4rem; }
+  .process h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+  .process .subtitle { color: var(--secondary); font-size: 1.1rem; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
+  .step { padding: 2rem; }
+  .step-number { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 3rem; color: var(--olive); opacity: 0.3; margin-bottom: 1rem; }
+  .step h3 { font-size: 1.3rem; margin-bottom: 0.75rem; font-weight: 600; }
+  .step p { color: var(--secondary); font-size: 0.95rem; line-height: 1.7; }
+
+  /* PORTFOLIO */
+  .portfolio { padding: 6rem 5%; background: var(--dark); color: var(--white); }
+  .portfolio h2 { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; }
+  .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+  .portfolio-item { aspect-ratio: 1; background: #333; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 0.9rem; }
+
+  /* PRICING */
+  .pricing { padding: 6rem 5%; max-width: 1200px; margin: 0 auto; }
+  .pricing .section-header { text-align: center; margin-bottom: 4rem; }
+  .pricing h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+  .pricing .subtitle { color: var(--secondary); font-size: 1.1rem; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .price-card { background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 2.5rem; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
+  .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+  .price-card.featured { border: 2px solid var(--olive); }
+  .price-tag { display: inline-block; background: var(--olive); color: var(--white); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
+  .price-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; }
+  .price-card .price { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; margin: 1rem 0; }
+  .price-card .price span { font-size: 1rem; font-weight: 400; color: var(--secondary); font-family: 'Inter', sans-serif; }
+  .price-card .best-for { color: var(--secondary); font-size: 0.9rem; margin-bottom: 1.5rem; font-style: italic; }
+  .price-card ul { list-style: none; margin-bottom: 2rem; }
+  .price-card ul li { padding: 0.4rem 0; font-size: 0.95rem; color: var(--secondary); }
+  .price-card ul li::before { content: "✓ "; color: var(--olive); font-weight: 700; }
+  .price-card .btn { width: 100%; text-align: center; }
+  .founding { text-align: center; margin-top: 3rem; padding: 1.5rem; background: var(--card-bg); border-radius: 12px; }
+  .founding .lock { font-size: 1.2rem; }
+
+  /* COMPARISON */
+  .comparison { padding: 6rem 5%; background: var(--card-bg); }
+  .comparison h2 { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; }
+  .comparison-table { max-width: 900px; margin: 0 auto; border-collapse: collapse; width: 100%; }
+  .comparison-table th, .comparison-table td { padding: 1rem 1.5rem; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.08); font-size: 0.95rem; }
+  .comparison-table th { font-weight: 600; color: var(--secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+  .comparison-table td:last-child { color: var(--olive); font-weight: 600; }
+  .comparison-table tr:last-child td { border-bottom: none; }
+
+  /* FAQ */
+  .faq { padding: 6rem 5%; max-width: 800px; margin: 0 auto; }
+  .faq h2 { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; }
+  .faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); padding: 1.5rem 0; }
+  .faq-item h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; cursor: pointer; }
+  .faq-item p { color: var(--secondary); font-size: 0.95rem; line-height: 1.7; }
+
+  /* FINAL CTA */
+  .final-cta { background: var(--olive); color: var(--white); padding: 6rem 5%; text-align: center; }
+  .final-cta h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; line-height: 1.3; }
+  .final-cta p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .final-cta .micro { font-size: 0.85rem; opacity: 0.7; margin-top: 1rem; }
+
+  /* FOOTER */
+  footer { padding: 3rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(0,0,0,0.06); }
+  footer .logo { font-size: 1.2rem; }
+  footer nav ul { display: flex; gap: 1.5rem; list-style: none; }
+  footer nav ul li a { text-decoration: none; color: var(--secondary); font-size: 0.85rem; }
+  footer .copy { color: var(--secondary); font-size: 0.85rem; }
+
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .trust-strip { flex-direction: column; gap: 0.75rem; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .comparison-table { font-size: 0.85rem; }
+    .comparison-table th, .comparison-table td { padding: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">VISUAL DEPT.</div>
+  <ul>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#pricing" class="btn">Get Started →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Studio-quality product photography. No studio required.</div>
+  <h1>Your products deserve visuals that actually sell.</h1>
+  <p>We transform your existing product photos into premium, scroll-stopping content — the kind that makes your Shopify store compete with brands 10x your size. No photoshoot. No shipping. 48 hours.</p>
+  <div class="hero-ctas">
+    <a href="#pricing" class="btn">See Pricing →</a>
+    <a href="#portfolio" class="secondary-link">or view our work ↓</a>
+  </div>
+  <div class="trust-strip">
+    <span><strong>✓</strong> 48-hour delivery</span>
+    <span><strong>✓</strong> No contracts</span>
+    <span><strong>✓</strong> Pause or cancel anytime</span>
+    <span><strong>✓</strong> Revisions included</span>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+  <p>Trusted by DTC brands in beauty, wellness, skincare, and home goods.</p>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-header">
+    <h2>The Visual Upgrade™</h2>
+    <p class="subtitle">Three steps. Premium visuals. No studio required.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">01</div>
+      <h3>Send Your Photos</h3>
+      <p>Upload what you have — product shots, iPhone photos, anything. We've worked with it all. No professional photography needed.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">02</div>
+      <h3>We Transform Them</h3>
+      <p>Our team builds premium scenes around your products — lifestyle shots, studio-quality backgrounds, flat lays. Think $5K photoshoot, without the photoshoot.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">03</div>
+      <h3>Launch Looking Premium</h3>
+      <p>Get Shopify-ready and ad-ready files delivered in 48 hours. Drop them into your store, Instagram, or ads. Watch the difference.</p>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="#pricing" class="btn">Start Your Visual Upgrade →</a>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <h2>What we've done.</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-item">Terra Botanics</div>
+    <div class="portfolio-item">SOLEIL</div>
+    <div class="portfolio-item">OKU</div>
+    <div class="portfolio-item">MIEL</div>
+    <div class="portfolio-item">NŌVA</div>
+    <div class="portfolio-item">Your Brand?</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-header">
+    <h2>Simple pricing. No surprises.</h2>
+    <p class="subtitle">Every plan includes revisions, Shopify-ready delivery, and a dedicated creative team.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <span class="price-tag">Most popular first step</span>
+      <h3>Proof Pack</h3>
+      <div class="price">$299</div>
+      <div class="best-for">Best for: Brands who want to test the quality before committing.</div>
+      <ul>
+        <li>10 studio-quality product visuals</li>
+        <li>Lifestyle + studio scenes</li>
+        <li>Shopify + ad-ready delivery</li>
+        <li>1 round of revisions</li>
+        <li>48-hour delivery</li>
+      </ul>
+      <a href="#" class="btn">Try The Visual Upgrade →</a>
+    </div>
+    <div class="price-card featured">
+      <span class="price-tag">Best value</span>
+      <h3>Growth</h3>
+      <div class="price">$497<span>/mo</span></div>
+      <div class="best-for">Best for: Brands scaling content who need a visual partner.</div>
+      <ul>
+        <li>Unlimited visual requests</li>
+        <li>1 active request at a time</li>
+        <li>24-48 hour turnaround</li>
+        <li>2 rounds of revisions per request</li>
+        <li>Brand style guide setup</li>
+        <li>Pause or cancel anytime</li>
+      </ul>
+      <a href="#" class="btn">Start Growing →</a>
+    </div>
+    <div class="price-card">
+      <h3>Scale</h3>
+      <div class="price">$997<span>/mo</span></div>
+      <div class="best-for">Best for: Brands ready for a full creative partnership.</div>
+      <ul>
+        <li>Everything in Growth</li>
+        <li>2 active requests at a time</li>
+        <li>Priority 24-hour turnaround</li>
+        <li>Ad creative variants (Meta + TikTok)</li>
+        <li>Brand identity & packaging (1/mo)</li>
+        <li>Monthly strategy call</li>
+      </ul>
+      <a href="#" class="btn btn-outline">Scale Your Brand →</a>
+    </div>
+  </div>
+  <div class="founding">
+    <p class="lock">🔒 <strong>Founding Client Offer</strong> — First 10 brands lock in these rates permanently. <strong>7 spots remaining.</strong></p>
+  </div>
+  <p style="text-align: center; color: var(--secondary); margin-top: 1.5rem; font-size: 0.95rem;">Not sure which plan? Start with the Proof Pack — zero commitment, zero risk. See the quality, then decide.</p>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+  <h2>Why brands choose Visual Dept.</h2>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Traditional Studio</th>
+        <th>DIY / AI Tools</th>
+        <th>Visual Dept</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Cost</strong></td><td>$2,000–5,000+</td><td>$29/mo</td><td>From $299</td></tr>
+      <tr><td><strong>Turnaround</strong></td><td>2–3 weeks</td><td>Instant (but looks it)</td><td>48 hours</td></tr>
+      <tr><td><strong>Quality</strong></td><td>Excellent</td><td>Hit or miss</td><td>Studio-grade</td></tr>
+      <tr><td><strong>Ship products?</strong></td><td>Yes</td><td>No</td><td>No</td></tr>
+      <tr><td><strong>Revisions</strong></td><td>Extra cost</td><td>Unlimited (bad ones)</td><td>Included</td></tr>
+      <tr><td><strong>Knows your brand?</strong></td><td>Maybe</td><td>Never</td><td>Always</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <h2>Questions? We've got answers.</h2>
+  <div class="faq-item">
+    <h3>What exactly do I get?</h3>
+    <p>High-quality product visuals — lifestyle scenes, studio shots, flat lays, or all three. Every image is delivered in Shopify-ready and ad-ready formats, sized and optimized so you can use them immediately.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How does this work without a real photoshoot?</h3>
+    <p>We use advanced image generation combined with professional retouching. You send us your product photos (even iPhone shots work), and we build premium scenes around them. Same result as a $5K shoot, fraction of the cost.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How long does delivery take?</h3>
+    <p>48 hours for the Proof Pack. Growth and Scale plans deliver within 24-48 hours per request.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can I see examples before I commit?</h3>
+    <p>Absolutely. Check our portfolio above, or DM us on Instagram for samples in your specific niche.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What if I don't like the results?</h3>
+    <p>Every package includes revisions. We work with you until it's right. If we genuinely can't deliver what you need, we refund you. No risk.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can I cancel my subscription?</h3>
+    <p>Yes. Pause or cancel anytime. No contracts, no lock-in, no guilt trips. We keep you because the work is good, not because of fine print.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What makes this different from Canva or AI tools?</h3>
+    <p>Those tools make you look like everyone else. We make you look like a $5K brand. The difference is curation, quality, and a human eye — your customers can tell.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Most product photos look the same.<br>Flat. Forgettable. Scrolled past.</h2>
+  <p>We create visuals that stop thumbs and sell products.</p>
+  <a href="#pricing" class="btn btn-white">Start Your Visual Upgrade → $299</a>
+  <p class="micro">No subscription required. 48-hour delivery. Revisions included.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">VISUAL DEPT.</div>
+  <nav>
+    <ul>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://instagram.com/visualdeptcreative" target="_blank">Instagram</a></li>
+    </ul>
+  </nav>
+  <div class="copy">© 2026 Visual Dept Creative · hello@visualdeptcreative.com</div>
+</footer>
+
+</body>
+</html>
