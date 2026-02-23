@@ -447,6 +447,17 @@
   footer nav ul li a { text-decoration: none; color: var(--secondary); font-size: 0.85rem; }
   footer .copy { color: var(--warm-gray); font-size: 0.85rem; width: 100%; text-align: center; margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.06); }
 
+  /* ═══ FONT LABELS (for Framer reference) ═══ */
+  .fl { 
+    display: inline-block; background: #E040FB; color: #fff; font-family: 'Inter', sans-serif;
+    font-size: 10px !important; font-weight: 600 !important; padding: 2px 6px; border-radius: 4px; 
+    margin-left: 8px; vertical-align: middle; letter-spacing: 0.5px; line-height: 1.4 !important;
+    text-transform: none !important; opacity: 0.9; white-space: nowrap;
+  }
+  .fl.sat { background: #FF6D00; }
+  .fl.serif { background: #2979FF; }
+  .fl.btn-label { background: #00C853; }
+
   /* ═══ RESPONSIVE ═══ */
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
@@ -475,14 +486,14 @@
 
 <!-- ═══ NAV ═══ -->
 <nav>
-  <div class="logo">VISUAL DEPT.</div>
+  <div class="logo">VISUAL DEPT. <span class="fl sat">Satoshi Black 800 · 22px · LOGO</span></div>
   <ul>
-    <li><a href="#process">How It Works</a></li>
+    <li><a href="#process">How It Works <span class="fl">Inter Medium 500 · 15px · NAV LINK</span></a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="#pricing" class="btn">Get Started →</a>
+  <a href="#pricing" class="btn">Get Started → <span class="fl btn-label">Inter SemiBold 600 · 16px · BUTTON</span></a>
 </nav>
 
 <div class="container">
@@ -495,15 +506,15 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="eyebrow">Studio-quality product photography. No studio required.</div>
-      <h1>Your products deserve visuals that actually sell.</h1>
-      <p>We transform your existing product photos into premium, scroll-stopping content - the kind that makes your Shopify store compete with brands 10x your size. No photoshoot. No shipping. 48 hours.</p>
+      <div class="eyebrow">Studio-quality product photography. No studio required. <span class="fl">Inter SemiBold 600 · 14px · UPPERCASE · EYEBROW</span></div>
+      <h1>Your products deserve visuals that actually sell. <span class="fl serif">DM Serif Display 400 · 64px · H1</span></h1>
+      <p>We transform your existing product photos into premium, scroll-stopping content - the kind that makes your Shopify store compete with brands 10x your size. No photoshoot. No shipping. 48 hours. <span class="fl">Inter Regular 400 · 18px · BODY LARGE</span></p>
       <div class="hero-ctas">
-        <a href="#pricing" class="btn btn-large">See Pricing →</a>
-        <a href="#portfolio" class="secondary-link">or view our work ↓</a>
+        <a href="#pricing" class="btn btn-large">See Pricing → <span class="fl btn-label">Inter SemiBold 600 · 18px · BUTTON LG</span></a>
+        <a href="#portfolio" class="secondary-link">or view our work ↓ <span class="fl">Inter Regular 400 · 15px · CAPTION</span></a>
       </div>
       <div class="trust-strip">
-        <span><span class="check">✓</span> 48-hour delivery</span>
+        <span><span class="check">✓</span> 48-hour delivery <span class="fl">Inter Regular 400 · 14px · BODY SMALL</span></span>
         <span><span class="check">✓</span> No contracts</span>
         <span><span class="check">✓</span> Pause or cancel anytime</span>
         <span><span class="check">✓</span> Revisions included</span>
@@ -527,7 +538,7 @@
 
 <!-- ═══ SOCIAL PROOF ═══ -->
 <section class="social-proof">
-  <p>Trusted by DTC brands in beauty, wellness, skincare, and home goods.</p>
+  <p>Trusted by DTC brands in beauty, wellness, skincare, and home goods. <span class="fl">Inter Medium 500 · 14px · UPPERCASE · CAPTION</span></p>
 </section>
 
 <div class="container">
@@ -539,14 +550,14 @@
 <!-- ═══ PROCESS ═══ -->
 <section class="process" id="process">
   <div class="section-header">
-    <h2 class="serif">The Visual Upgrade™</h2>
-    <p class="subtitle">Three steps. Premium visuals. No studio required.</p>
+    <h2 class="serif">The Visual Upgrade™ <span class="fl serif">DM Serif Display 400 · 51px · H2</span></h2>
+    <p class="subtitle">Three steps. Premium visuals. No studio required. <span class="fl">Inter Regular 400 · 18px · BODY LARGE</span></p>
   </div>
   <div class="steps">
     <div class="step">
-      <div class="step-number">01</div>
-      <h3>Send Your Photos</h3>
-      <p>Upload what you have - product shots, iPhone photos, anything. We've worked with it all. No professional photography needed.</p>
+      <div class="step-number">01 <span class="fl sat">Satoshi Black 800 · 56px · DISPLAY</span></div>
+      <h3>Send Your Photos <span class="fl">Inter Bold 700 · 21px · H4</span></h3>
+      <p>Upload what you have - product shots, iPhone photos, anything. We've worked with it all. No professional photography needed. <span class="fl">Inter Regular 400 · 15px · BODY</span></p>
     </div>
     <div class="step">
       <div class="step-number">02</div>
@@ -560,7 +571,7 @@
     </div>
   </div>
   <div style="text-align: center; margin-top: 3.5rem;">
-    <a href="#pricing" class="btn btn-large">Start Your Visual Upgrade →</a>
+    <a href="#pricing" class="btn btn-large">Start Your Visual Upgrade → <span class="fl btn-label">Inter SemiBold 600 · 18px · BUTTON LG</span></a>
   </div>
 </section>
 
@@ -575,12 +586,12 @@
 
 <!-- ═══ PORTFOLIO ═══ -->
 <section class="portfolio" id="portfolio">
-  <h2 class="serif">What we've done.</h2>
-  <p class="subtitle">Real transformations. Real brands. Real results.</p>
+  <h2 class="serif">What we've done. <span class="fl serif">DM Serif Display 400 · 51px · H2</span></h2>
+  <p class="subtitle">Real transformations. Real brands. Real results. <span class="fl">Inter Regular 400 · 17px · BODY LARGE</span></p>
   <div class="portfolio-grid">
     <div class="portfolio-item">
-      <div class="brand-name">Terra Botanics</div>
-      <span>Skincare · Product + Lifestyle</span>
+      <div class="brand-name">Terra Botanics <span class="fl">Inter SemiBold 600 · 18px · H5</span></div>
+      <span>Skincare · Product + Lifestyle <span class="fl">Inter Regular 400 · 14px · BODY SMALL</span></span>
     </div>
     <div class="portfolio-item">
       <div class="brand-name">SOLEIL</div>
@@ -614,28 +625,28 @@
 <!-- ═══ PRICING ═══ -->
 <section class="pricing" id="pricing">
   <div class="section-header">
-    <h2 class="serif">Simple pricing. No surprises.</h2>
-    <p class="subtitle">Every plan includes revisions, Shopify-ready delivery, and a dedicated creative team.</p>
+    <h2 class="serif">Simple pricing. No surprises. <span class="fl serif">DM Serif Display 400 · 51px · H2</span></h2>
+    <p class="subtitle">Every plan includes revisions, Shopify-ready delivery, and a dedicated creative team. <span class="fl">Inter Regular 400 · 18px · BODY LARGE</span></p>
   </div>
   <div class="pricing-grid">
     <div class="price-card">
-      <span class="price-tag secondary">Most popular first step</span>
-      <h3>Proof Pack</h3>
-      <div class="price">$199</div>
-      <div class="best-for">Best for brands who want to test the quality before committing.</div>
+      <span class="price-tag secondary">Most popular first step <span class="fl">Inter SemiBold 600 · 12px · UPPERCASE · TAG</span></span>
+      <h3>Proof Pack <span class="fl">Inter Bold 700 · 22px · H4</span></h3>
+      <div class="price">$199 <span class="fl sat">Satoshi ExtraBold 800 · 48px · PRICE</span></div>
+      <div class="best-for">Best for brands who want to test the quality before committing. <span class="fl">Inter Regular 400 · 14px · BODY SMALL</span></div>
       <ul>
-        <li>10 studio-quality product visuals</li>
+        <li>10 studio-quality product visuals <span class="fl">Inter Regular 400 · 15px · BODY</span></li>
         <li>Lifestyle + studio scenes</li>
         <li>Shopify + ad-ready delivery</li>
         <li>1 round of revisions</li>
         <li>48-hour delivery</li>
       </ul>
-      <a href="#" class="btn">Try The Visual Upgrade →</a>
+      <a href="#" class="btn">Try The Visual Upgrade → <span class="fl btn-label">Inter SemiBold 600 · 16px · BUTTON</span></a>
     </div>
     <div class="price-card featured">
-      <span class="price-tag">Best value</span>
-      <h3>Growth</h3>
-      <div class="price">$399<span>/mo</span></div>
+      <span class="price-tag">Best value <span class="fl" style="background:#fff;color:#E040FB">TAG</span></span>
+      <h3>Growth <span class="fl">Inter Bold 700 · 22px · H4</span></h3>
+      <div class="price">$399<span>/mo <span class="fl">Inter Regular 400 · 16px</span></span></div>
       <div class="best-for">Best for brands scaling content who need a visual partner.</div>
       <ul>
         <li>Unlimited visual requests</li>
@@ -663,7 +674,7 @@
     </div>
   </div>
   <div class="founding">
-    <p>🔒 <strong>Founding Client Offer</strong> - First 10 brands lock in these rates permanently. <strong>7 spots remaining.</strong></p>
+    <p>🔒 <strong>Founding Client Offer</strong> - First 10 brands lock in these rates permanently. <strong>7 spots remaining.</strong> <span class="fl">Inter Regular 400 · 16px · BODY + Inter Bold for strong</span></p>
   </div>
   <p style="text-align: center; color: var(--secondary); margin-top: 2rem; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">Not sure which plan? Start with the Proof Pack - zero commitment, zero risk. See the quality, then decide.</p>
 </section>
@@ -686,7 +697,7 @@
 
 <!-- ═══ COMPARISON ═══ -->
 <section class="comparison">
-  <h2 class="serif">Why brands choose Visual Dept.</h2>
+  <h2 class="serif">Why brands choose Visual Dept. <span class="fl serif">DM Serif Display 400 · 51px · H2</span></h2>
   <table class="comparison-table">
     <thead>
       <tr>
@@ -723,11 +734,11 @@
 <!-- ═══ FAQ ═══ -->
 <section class="faq" id="faq">
   <div class="faq-inner">
-    <h2 class="serif">Questions? We've got answers.</h2>
+    <h2 class="serif">Questions? We've got answers. <span class="fl serif">DM Serif Display 400 · 51px · H2</span></h2>
     
     <div class="faq-item">
-      <h3>What exactly do I get?</h3>
-      <p>High-quality product visuals - lifestyle scenes, studio shots, flat lays, or all three. Every image is delivered in Shopify-ready and ad-ready formats, sized and optimized so you can use them immediately.</p>
+      <h3>What exactly do I get? <span class="fl">Inter SemiBold 600 · 18px · H5</span></h3>
+      <p>High-quality product visuals - lifestyle scenes, studio shots, flat lays, or all three. Every image is delivered in Shopify-ready and ad-ready formats, sized and optimized so you can use them immediately. <span class="fl">Inter Regular 400 · 15px · BODY</span></p>
     </div>
     <div class="faq-item">
       <h3>How does this work without a real photoshoot?</h3>
@@ -764,10 +775,10 @@
 
 <!-- ═══ FINAL CTA ═══ -->
 <section class="final-cta">
-  <h2 class="serif">Most product photos look the same.<br>Flat. Forgettable. Scrolled past.</h2>
-  <p>We create visuals that stop thumbs and sell products.</p>
-  <a href="#pricing" class="btn btn-white btn-large">Start Your Visual Upgrade → $199</a>
-  <p class="micro">No subscription required. 48-hour delivery. Revisions included.</p>
+  <h2 class="serif">Most product photos look the same.<br>Flat. Forgettable. Scrolled past. <span class="fl serif">DM Serif Display 400 · 51px · H2</span></h2>
+  <p>We create visuals that stop thumbs and sell products. <span class="fl">Inter Regular 400 · 18px · BODY LARGE</span></p>
+  <a href="#pricing" class="btn btn-white btn-large">Start Your Visual Upgrade → $199 <span class="fl btn-label">Inter Bold 700 · 18px · BUTTON LG</span></a>
+  <p class="micro">No subscription required. 48-hour delivery. Revisions included. <span class="fl">Inter Regular 400 · 14px · CAPTION</span></p>
 </section>
 
 <div class="container">
