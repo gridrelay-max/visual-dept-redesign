@@ -459,18 +459,113 @@
   .fl.btn-label { background: #00C853; }
 
   /* ═══ RESPONSIVE ═══ */
+
+  /* Tablet (900px) */
   @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
     .hero-visual { display: none; }
-    .steps { grid-template-columns: 1fr; }
-    .pricing-grid { grid-template-columns: 1fr; max-width: 450px; margin-left: auto; margin-right: auto; }
+    .hero { padding: 4rem 5% 3rem; }
+    .hero h1 { font-size: clamp(2.2rem, 7vw, 3rem); }
+    .steps { grid-template-columns: 1fr; gap: 1.5rem; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
     .portfolio-grid { grid-template-columns: 1fr 1fr; }
     nav ul { display: none; }
+    .process { padding: 4rem 5%; }
+    .pricing { padding: 4rem 5%; }
+    .portfolio { padding: 4rem 5%; }
+    .comparison { padding: 4rem 5%; }
+    .faq { padding: 4rem 5%; }
+    .final-cta { padding: 4rem 5%; }
   }
-  @media (max-width: 600px) {
-    .portfolio-grid { grid-template-columns: 1fr; }
-    .comparison-table { font-size: 0.8rem; }
-    .comparison-table th, .comparison-table td { padding: 0.75rem 0.6rem; }
+
+  /* Mobile (480px) */
+  @media (max-width: 480px) {
+    /* Nav — logo + CTA only, no links */
+    nav {
+      padding: 0.9rem 5%;
+    }
+    nav ul { display: none; }
+    nav .btn {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.875rem;
+    }
+
+    /* Hero */
+    .hero { padding: 2.5rem 5% 2rem; }
+    .hero h1 { font-size: 2rem; line-height: 1.15; margin-bottom: 1rem; }
+    .hero .eyebrow { font-size: 0.75rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1rem; margin-bottom: 1.75rem; line-height: 1.65; }
+    .hero-ctas { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+    .hero-ctas .btn { text-align: center; width: 100%; }
+    .hero-ctas .secondary-link { text-align: center; }
+    .trust-strip { gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; }
+    .trust-strip span { font-size: 0.8rem; }
+
+    /* Section headers */
+    .process h2, .pricing h2, .portfolio h2, .faq h2, .comparison h2 {
+      font-size: 1.75rem;
+    }
+    .process .subtitle, .pricing .subtitle { font-size: 1rem; }
+    .process { padding: 3rem 5%; }
+    .process .section-header { margin-bottom: 2.5rem; }
+
+    /* Steps */
+    .steps { gap: 1.25rem; }
+    .step { padding: 1.75rem 1.5rem; }
+    .step-number { font-size: 2.5rem; }
+    .step h3 { font-size: 1.1rem; }
+
+    /* Portfolio */
+    .portfolio { padding: 3rem 5%; }
+    .portfolio-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .portfolio h2 { font-size: 1.75rem; }
+    .portfolio .subtitle { font-size: 0.95rem; }
+
+    /* Pricing */
+    .pricing { padding: 3rem 5%; }
+    .pricing-grid { max-width: 100%; }
+    .pricing .section-header { margin-bottom: 2.5rem; }
+    .price-card { padding: 2rem 1.5rem; }
+    .price-card .price { font-size: 2.5rem; }
+    .price-card h3 { font-size: 1.2rem; }
+    .price-card .btn { padding: 0.85rem 1.5rem; font-size: 0.95rem; }
+    .founding { margin-top: 2rem; padding: 1.25rem 1.5rem; }
+
+    /* Comparison table — horizontal scroll */
+    .comparison { padding: 3rem 5%; }
+    .comparison h2 { font-size: 1.75rem; margin-bottom: 2rem; }
+    .comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .comparison-table { font-size: 0.8rem; min-width: 500px; }
+    .comparison-table th, .comparison-table td { padding: 0.85rem 1rem; }
+
+    /* FAQ */
+    .faq { padding: 3rem 5%; }
+    .faq h2 { font-size: 1.75rem; margin-bottom: 2.5rem; }
+    .faq-item { padding: 1.25rem 0; }
+    .faq-item h3 { font-size: 1rem; }
+
+    /* Final CTA */
+    .final-cta { padding: 3rem 5%; }
+    .final-cta h2 { font-size: 1.75rem; }
+    .final-cta p { font-size: 1rem; }
+    .final-cta .btn { width: 100%; text-align: center; padding: 1rem 1.5rem; }
+
+    /* Footer */
+    footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 2rem 5%;
+    }
+    footer nav ul { flex-wrap: wrap; gap: 1rem; }
+
+    /* Design notes — collapse on mobile for readability */
+    .design-note, .research-note, .psychology-note { font-size: 0.78rem; padding: 0.75rem 1rem; }
+    .fl { font-size: 9px !important; padding: 1px 4px; }
+
+    /* Social proof */
+    .social-proof { padding: 1.25rem 5%; }
+    .social-proof p { font-size: 0.8rem; }
   }
 </style>
 </head>
@@ -698,6 +793,7 @@
 <!-- ═══ COMPARISON ═══ -->
 <section class="comparison">
   <h2 class="serif">Why brands choose Visual Dept. <span class="fl serif">DM Serif Display 400 · 51px · H2</span></h2>
+  <div class="comparison-table-wrap">
   <table class="comparison-table">
     <thead>
       <tr>
@@ -716,6 +812,7 @@
       <tr><td><strong>Knows your brand?</strong></td><td>Maybe</td><td>Never</td><td>Always</td></tr>
     </tbody>
   </table>
+  </div>
 </section>
 
 <div class="container">
